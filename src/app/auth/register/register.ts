@@ -51,7 +51,7 @@ export class RegisterComponent {
           phone: this.phone || '',
           bloodGroup: this.bloodGroup || '',
         };
-        this.patientService.addPatient(newPatient).subscribe();
+        // this.patientService.addPatient(newPatient).subscribe();
       }
 
       // 3️⃣ If doctor — also add to doctor management
@@ -62,11 +62,14 @@ export class RegisterComponent {
           phone: this.phone || '',
           fee: this.fee || 0,
         };
-        this.doctorService.addDoctor(newDoctor).subscribe();
+        // this.doctorService.addDoctor(newDoctor).subscribe();
       }
 
       alert('Registration successful!');
       this.router.navigate(['/auth/login']);
     });
+  }
+  go_to_login_page(){
+    this.router.navigate(['/auth/login']);
   }
 }

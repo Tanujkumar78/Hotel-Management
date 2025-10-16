@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 
 import { PatientService } from '../../services/patient';
+import { UserService } from '../../services/user';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-patients',
@@ -19,19 +21,25 @@ export class PatientsComponent implements OnInit {
     age: '',
     gender: '',
     phone: '',
-    bloodGroup: ''
+    bloodGroup: '',
+    role:'patient'
   };
 
-  constructor(private patientService: PatientService) {}
+  constructor(private patientService: UserService) {}
 
   ngOnInit() {
     this.loadPatients();
   }
 
   loadPatients() {
-    this.patientService.getPatients().subscribe((data) => {
-      this.patients = data;
-    });
+   this.patientService.getUsers()
+  .pipe(
+    map((data: any[]) => data.filter(user => user.role === 'patient'))
+  )
+  .subscribe(filteredPatients => {
+    this.patients = filteredPatients;
+    console.log('Patients:', this.patients);
+  });
   }
 
   addPatient() {
@@ -43,9 +51,9 @@ export class PatientsComponent implements OnInit {
     const id = 'P' + (this.patients.length + 1).toString().padStart(3, '0');
     const patient = { id, ...this.newPatient };
 
-    this.patientService.addPatient(patient).subscribe(() => {
+    this.patientService.addUser(patient).subscribe(() => {
       this.patients.push(patient);
-      this.newPatient = { name: '', age: '', gender: '', phone: '', bloodGroup: '' };
+      this.newPatient = { name: '', age: '', gender: '', phone: '', bloodGroup: '', role:'patient' };
     });
   }
 }

@@ -20,6 +20,7 @@ export class LoginComponent {
     this.userService.getUsers().subscribe(users => {
       const user = users.find((u: any) => u.email === this.email && u.password === this.password);
       if (user) {
+        localStorage.setItem('loggedInUser', JSON.stringify(user));
         if (user.role === 'admin') this.router.navigate(['dashboard/admin']);
         else if (user.role === 'doctor') this.router.navigate(['/dashboard/doctor']);
         else this.router.navigate(['/dashboard/patient']);
@@ -27,5 +28,8 @@ export class LoginComponent {
         this.errorMessage = 'Invalid email or password';
       }
     });
+  }
+  go_to_register_page(){
+    this.router.navigate(['/auth/register']);
   }
 }

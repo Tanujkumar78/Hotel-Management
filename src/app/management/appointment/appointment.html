@@ -1,43 +1,64 @@
 <div class="appointment-container">
   <h2>Appointment Management</h2>
 
-  <form (ngSubmit)="addAppointment()" class="appointment-form">
+  <form (ngSubmit)="addAppointment()" class="appointment-form" #appointmentForm="ngForm">
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
     <div>
       <label>Patient:</label>
-      <select [(ngModel)]="newAppointment.patientId" name="patientId" required>
+      <select [(ngModel)]="newAppointment.patientId" name="patientId" required #patientSelect="ngModel">
         <option value="">Select Patient</option>
         <option *ngFor="let p of patients" [value]="p.id">
           {{ p.name }}
         </option>
       </select>
+      <div class="error-hint" *ngIf="patientSelect.touched && patientSelect.invalid">
+        Please select a patient
+      </div>
     </div>
 
     <div>
       <label>Doctor:</label>
-      <select [(ngModel)]="newAppointment.doctorId" name="doctorId" required>
+      <select [(ngModel)]="newAppointment.doctorId" name="doctorId" required (change)="onSelection($event)" #doctorSelect="ngModel">
         <option value="">Select Doctor</option>
         <option *ngFor="let d of doctors" [value]="d.id">
-          {{ d.name }}
+          {{ d.name }} ({{ d.specialization }})
         </option>
       </select>
+      <div class="error-hint" *ngIf="doctorSelect.touched && doctorSelect.invalid">
+        Please select a doctor
+      </div>
     </div>
 
     <div>
       <label>Date:</label>
-      <input type="date" [(ngModel)]="newAppointment.date" name="date" required />
+      <input type="date" [(ngModel)]="newAppointment.date" name="date" required 
+             [min]="minDate" #dateInput="ngModel" />
+      <div class="error-hint" *ngIf="dateInput.touched && dateInput.invalid">
+        Please select a valid future date
+      </div>
     </div>
 
     <div>
       <label>Time Slot:</label>
-      <select [(ngModel)]="newAppointment.timeSlot" name="timeSlot" required>
+      <select [(ngModel)]="newAppointment.timeSlot" name="timeSlot" required #timeSlot="ngModel">
         <option value="">Select Time Slot</option>
         <option>Morning</option>
         <option>Afternoon</option>
         <option>Evening</option>
       </select>
+      <div class="error-hint" *ngIf="timeSlot.touched && timeSlot.invalid">
+        Please select a time slot
+      </div>
     </div>
 
-    <button type="submit">Add Appointment</button>
+    <div class="doctor-info" *ngIf="selectedDoctor">
+      <h4>Selected Doctor Information</h4>
+      <p>Specialization: {{ selectedDoctor.specialization }}</p>
+      <p>Consultation Fee: ${{ selectedDoctor.fee }}</p>
+    </div>
+
+    <button type="submit" [disabled]="appointmentForm.invalid">Add Appointment</button>
   </form>
 
   <table class="appointment-table" *ngIf="appointments.length > 0">

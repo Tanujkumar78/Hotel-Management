@@ -21,6 +21,7 @@ export class Patient implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     // Step 1: Get logged-in patient info
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
     if (!loggedInUser || loggedInUser.role.toLowerCase() !== 'patient') {
@@ -29,6 +30,8 @@ export class Patient implements OnInit {
       return;
     }
 
+    console.log('user :',loggedInUser);
+    
     this.patient = loggedInUser;
 
     // Step 2: Load appointments for this patient
@@ -36,20 +39,19 @@ export class Patient implements OnInit {
   }
 
   loadAppointments() {
-    this.appointmentService.getAppointments().subscribe((data) => {
+    this.appointmentService.getAppointmentById(this.patient.id,"patientId").subscribe((data) => {
       // Match by patient name
-      this.appointments = data.filter(
-        (app: any) => app.patientName === this.patient.name
-      );
+      this.appointments = data
       
       console.log(data)
     });
   }
 
-  
+
 
   logout() {
     localStorage.removeItem('loggedInUser');
     this.router.navigate(['/auth/login']);
   }
 }
+

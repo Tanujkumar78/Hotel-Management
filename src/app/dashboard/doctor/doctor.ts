@@ -42,14 +42,11 @@ export class Doctor implements OnInit {
 
   // Load all appointments related to this doctor
   loadAppointments() {
-    this.appointmentService.getAppointments().subscribe((data) => {
+    console.log(this.doctor);
+    
+    this.appointmentService.getAppointmentById(this.doctor.id,'doctorId').subscribe((data) => {
       // Filter appointments for this specific doctor
-      this.appointments = data.filter(
-        (app: any) =>
-          app.doctorEmail === this.doctor.email ||
-          app.doctorName === this.doctor.name
-      );
-
+      this.appointments = data;
       this.totalAppointments = this.appointments.length;
       this.completedAppointments = this.appointments.filter(
         (a) => a.status === 'Completed'

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -13,7 +14,10 @@ export class AdminDashboardComponent {
   totalPatients = 12; // you can load from db.json later
   totalDoctors = 5;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private userService : UserService) {
+     this.getUserCounts()
+
+  }
 
  m(){
     this.router.navigate(['/management/patient']);
@@ -25,6 +29,14 @@ export class AdminDashboardComponent {
 
  o(){
     this.router.navigate(['/management/appointment']);
+ }
+
+ getUserCounts()
+ {
+    this.userService.getUsers().subscribe((data) => {
+      this.totalPatients = data.filter((user: any) => user.role === 'patient').length;
+      this.totalDoctors = data.filter((user: any) => user.role === 'doctor').length;
+    });
  }
 
   logout() {

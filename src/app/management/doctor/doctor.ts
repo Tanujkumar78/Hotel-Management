@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DoctorService } from '../../services/doctor';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../services/user';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-doctor',
@@ -16,18 +18,23 @@ export class DoctorComponent implements OnInit {
     specialization: '',
     phone: '',
     fee: '',
+    role:'doctor'
   };
 
-  constructor(private doctorService: DoctorService) {}
+  constructor(private doctorService: UserService) {}
 
   ngOnInit() {
     this.loadDoctors();
   }
 
   loadDoctors() {
-    this.doctorService.getDoctors().subscribe((data) => {
-      this.doctors = data;
-    });
+    this.doctorService.getUsers()
+     .pipe(
+       map((data: any[]) => data.filter(user => user.role === 'doctor'))
+     )
+     .subscribe(filteredPatients => {
+       this.doctors = filteredPatients;
+     });
   }
 
   addDoctor() {
@@ -41,7 +48,7 @@ export class DoctorComponent implements OnInit {
         ...this.newDoctor,
         id: 'D' + (this.doctors.length + 1).toString().padStart(3, '0'),
       };
-      this.doctorService.addDoctor(doctor).subscribe(() => {
+      this.doctorService.addUser(doctor).subscribe(() => {
         this.newDoctor = { name: '', specialization: '', phone: '', fee: '' };
         this.loadDoctors();
       });
@@ -49,7 +56,7 @@ export class DoctorComponent implements OnInit {
   }
 
   deleteDoctor(id: string) {
-    this.doctorService.deleteDoctor(id).subscribe(() => {
+    this.doctorService.deleteUser(id).subscribe(() => {
       this.loadDoctors();
     });
   }
