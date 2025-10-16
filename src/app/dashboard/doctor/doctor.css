@@ -1,0 +1,66 @@
+.doctor-dashboard {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #1a73e8;
+  text-align: center;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.card.total {
+  border-left: 6px solid #1a73e8;
+}
+
+.card.completed {
+  border-left: 6px solid #43a047;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.logout-btn {
+  margin-top: 30px;
+  display: block;
+  width: 100%;
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}

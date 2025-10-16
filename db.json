@@ -1,0 +1,396 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@hospital.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Dr. Smith",
+      "email": "drsmith@hospital.com",
+      "password": "doctor123",
+      "role": "doctor"
+    },
+    {
+      "id": "3",
+      "name": "John Doe",
+      "email": "john@hospital.com",
+      "password": "patient123",
+      "role": "patient"
+    },
+    {
+      "id": "919d",
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "30d0",
+      "name": "abcd",
+      "email": "abcd@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "2bfd",
+      "name": "a",
+      "email": "a@gmail.com",
+      "password": "123",
+      "role": "doctor"
+    },
+    {
+      "id": "769f",
+      "name": "patient",
+      "email": "patient@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "d284",
+      "name": "doctor",
+      "email": "doctor@gmail.com",
+      "password": "123",
+      "role": "doctor"
+    },
+    {
+      "id": "4676",
+      "name": "lahari",
+      "email": "lahari@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "58fc",
+      "name": "ravi",
+      "email": "ravi@gmail.com",
+      "password": "123",
+      "role": "doctor"
+    },
+    {
+      "id": "bcf6",
+      "name": "srihari",
+      "email": "srihari@gmail.com",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "20c9",
+      "name": "zxc",
+      "email": "zxc@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "f454",
+      "name": "qwe",
+      "email": "qwe@gmail.com",
+      "password": "123",
+      "role": "doctor"
+    },
+    {
+      "id": "db68",
+      "name": "hello",
+      "email": "hello@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "a5b8",
+      "name": "xyz",
+      "email": "xyz@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "6a8a",
+      "name": "l",
+      "email": "l@gmail.com",
+      "password": "123",
+      "role": "doctor"
+    },
+    {
+      "id": "25b8",
+      "name": "1",
+      "email": "1@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "3cb5",
+      "name": "2",
+      "email": "2@gmail.com",
+      "password": "123",
+      "role": "doctor"
+    },
+    {
+      "id": "5166",
+      "name": "van",
+      "email": "van@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "68a0",
+      "name": "aaaa",
+      "email": "aaa@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "78cc",
+      "name": "bbbb",
+      "email": "bbb@gmail.com",
+      "password": "123",
+      "role": "doctor"
+    }
+  ],
+  "patients": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "age": 30,
+      "doctorId": 2
+    },
+    {
+      "id": "P002",
+      "name": "Tanujkumar",
+      "age": 59733,
+      "gender": "Female",
+      "phone": "3333333333333333333",
+      "bloodGroup": "B+"
+    },
+    {
+      "id": "P003",
+      "name": "g",
+      "age": 789,
+      "gender": "Female",
+      "phone": "5",
+      "bloodGroup": "A+"
+    },
+    {
+      "id": "3c12",
+      "name": "zxc",
+      "age": 0,
+      "gender": "Unknown",
+      "phone": "",
+      "bloodGroup": ""
+    },
+    {
+      "id": "d9c4",
+      "name": "hello",
+      "age": 0,
+      "gender": "Unknown",
+      "phone": "",
+      "bloodGroup": ""
+    },
+    {
+      "id": "fb03",
+      "name": "xyz",
+      "age": 0,
+      "gender": "Unknown",
+      "phone": "",
+      "bloodGroup": ""
+    },
+    {
+      "id": "263d",
+      "name": "1",
+      "age": 0,
+      "gender": "Unknown",
+      "phone": "",
+      "bloodGroup": ""
+    },
+    {
+      "id": "f4c3",
+      "name": "van",
+      "age": 0,
+      "gender": "Unknown",
+      "phone": "",
+      "bloodGroup": ""
+    },
+    {
+      "id": "373e",
+      "name": "aaaa",
+      "age": 0,
+      "gender": "Unknown",
+      "phone": "",
+      "bloodGroup": ""
+    }
+  ],
+  "doctors": [
+    {
+      "id": "D001",
+      "name": "Tanujkumar",
+      "specialization": "w",
+      "phone": "1234567890",
+      "fee": 123
+    },
+    {
+      "id": "e88b",
+      "name": "qwe",
+      "specialization": "General",
+      "phone": "",
+      "fee": 0
+    },
+    {
+      "id": "0c1f",
+      "name": "l",
+      "specialization": "General",
+      "phone": "",
+      "fee": 0
+    },
+    {
+      "id": "94e3",
+      "name": "2",
+      "specialization": "General",
+      "phone": "",
+      "fee": 0
+    },
+    {
+      "id": "1554",
+      "name": "bbbb",
+      "specialization": "General",
+      "phone": "",
+      "fee": 0
+    }
+  ],
+  "appointments": [
+    {
+      "id": 3,
+      "patientId": "P002",
+      "doctorId": "D001",
+      "date": "2025-10-03",
+      "timeSlot": "Evening",
+      "status": "Scheduled",
+      "patientName": "Tanujkumar",
+      "doctorName": "Tanujkumar"
+    },
+    {
+      "id": 4,
+      "patientId": "3c12",
+      "doctorId": "D001",
+      "date": "2025-10-11",
+      "timeSlot": "Afternoon",
+      "status": "Scheduled",
+      "patientName": "zxc",
+      "doctorName": "Tanujkumar"
+    },
+    {
+      "id": 5,
+      "patientId": "3c12",
+      "doctorId": "e88b",
+      "date": "2025-10-09",
+      "timeSlot": "Morning",
+      "status": "Scheduled",
+      "patientName": "zxc",
+      "doctorName": "qwe"
+    },
+    {
+      "id": 6,
+      "patientId": "3c12",
+      "doctorId": "e88b",
+      "date": "2025-10-02",
+      "timeSlot": "Afternoon",
+      "status": "Scheduled",
+      "patientName": "zxc",
+      "doctorName": "qwe"
+    },
+    {
+      "id": 7,
+      "patientId": "d9c4",
+      "doctorId": "e88b",
+      "date": "2025-10-24",
+      "timeSlot": "Afternoon",
+      "status": "Scheduled",
+      "patientName": "hello",
+      "doctorName": "qwe"
+    },
+    {
+      "id": 8,
+      "patientId": "fb03",
+      "patientName": "xyz",
+      "patientEmail": "",
+      "doctorId": "e88b",
+      "doctorName": "qwe",
+      "doctorEmail": "",
+      "date": "2025-10-29",
+      "timeSlot": "Evening",
+      "status": "Scheduled"
+    },
+    {
+      "id": 9,
+      "patientId": "fb03",
+      "patientName": "xyz",
+      "patientEmail": "",
+      "doctorId": "D001",
+      "doctorName": "Tanujkumar",
+      "doctorEmail": "",
+      "date": "0001-11-11",
+      "timeSlot": "Morning",
+      "status": "Scheduled"
+    },
+    {
+      "id": 9,
+      "patientId": "fb03",
+      "doctorId": "e88b",
+      "date": "2025-10-05",
+      "timeSlot": "Morning",
+      "status": "Scheduled",
+      "patientName": "xyz",
+      "doctorName": "qwe"
+    },
+    {
+      "id": 10,
+      "patientId": "fb03",
+      "patientName": "xyz",
+      "doctorId": "e88b",
+      "doctorName": "qwe",
+      "date": "2025-10-31",
+      "timeSlot": "Evening",
+      "status": "Scheduled"
+    },
+    {
+      "id": 11,
+      "patientId": "263d",
+      "patientName": "1",
+      "doctorId": "94e3",
+      "doctorName": "2",
+      "date": "2025-10-01",
+      "timeSlot": "Morning",
+      "status": "Scheduled"
+    },
+    {
+      "id": 11,
+      "patientId": "1",
+      "patientName": "John Doe",
+      "doctorId": "D001",
+      "doctorName": "Tanujkumar",
+      "date": "2025-10-02",
+      "timeSlot": "Morning",
+      "status": "Scheduled"
+    },
+    {
+      "id": 12,
+      "patientId": "f4c3",
+      "patientName": "van",
+      "doctorId": "94e3",
+      "doctorName": "2",
+      "date": "2025-10-10",
+      "timeSlot": "Afternoon",
+      "status": "Scheduled"
+    },
+    {
+      "id": 13,
+      "patientId": "373e",
+      "patientName": "aaaa",
+      "doctorId": "1554",
+      "doctorName": "bbbb",
+      "date": "0022-02-22",
+      "timeSlot": "Evening",
+      "status": "Scheduled"
+    }
+  ]
+}

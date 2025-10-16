@@ -1,0 +1,44 @@
+.patient-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+.patient-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.patient-form input,
+.patient-form select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.patient-form button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patient-table th,
+.patient-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.patient-table th {
+  background: #1976d2;
+  color: white;
+}
