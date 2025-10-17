@@ -1,4 +1,10 @@
 <div class="appointment-container">
+
+  <button class="back-btn" (click)="goBack()">
+  ← Back
+</button>
+
+
   <h2>Appointment Management</h2>
 
   <form (ngSubmit)="addAppointment()" class="appointment-form" #appointmentForm="ngForm">

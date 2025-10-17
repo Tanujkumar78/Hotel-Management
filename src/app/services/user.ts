@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  getAppointments() {
+     throw new Error('Method not implemented.');
+  }
   getLoggedInUser(): any {
     throw new Error('Method not implemented.');
   }

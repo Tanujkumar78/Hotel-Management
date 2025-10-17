@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user';
 import { map } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor',
@@ -21,7 +22,7 @@ export class DoctorComponent implements OnInit {
     role:'doctor'
   };
 
-  constructor(private doctorService: UserService) {}
+  constructor(private doctorService: UserService,private router: Router) {}
 
   ngOnInit() {
     this.loadDoctors();
@@ -59,5 +60,9 @@ export class DoctorComponent implements OnInit {
     this.doctorService.deleteUser(id).subscribe(() => {
       this.loadDoctors();
     });
+  }
+
+  goBack() {
+     this.router.navigate(['dashboard/admin']);
   }
 }

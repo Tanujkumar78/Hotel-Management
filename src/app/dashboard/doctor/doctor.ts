@@ -25,7 +25,7 @@ export class Doctor implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // ✅ Step 1: Get logged-in user info
+   
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
   if (!loggedInUser || loggedInUser.role.toLowerCase() !== 'doctor') {
   alert('Unauthorized access! Please log in as a doctor.');
@@ -36,16 +36,15 @@ export class Doctor implements OnInit {
 
     this.doctor = loggedInUser;
 
-    // ✅ Step 2: Load doctor-specific appointments
     this.loadAppointments();
   }
 
-  // Load all appointments related to this doctor
+  
   loadAppointments() {
     console.log(this.doctor);
     
     this.appointmentService.getAppointmentById(this.doctor.id,'doctorId').subscribe((data) => {
-      // Filter appointments for this specific doctor
+      
       this.appointments = data;
       this.totalAppointments = this.appointments.length;
       this.completedAppointments = this.appointments.filter(

@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user';
 import { map } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 interface Appointment {
   id: number;
@@ -65,6 +67,7 @@ export class AppointmentComponent implements OnInit {
   constructor(
     private appointmentService: AppointmentService,
     private doctorService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -73,7 +76,7 @@ export class AppointmentComponent implements OnInit {
     this.loadAppointments();
   }
 
-  // Load doctors list
+  
   loadDoctors() {
     this.doctorService.getUsers()
       .pipe(
@@ -84,7 +87,7 @@ export class AppointmentComponent implements OnInit {
       });
   }
 
-  // Load patients list
+  
   loadPatients() {
     this.doctorService.getUsers()
       .pipe(
@@ -97,21 +100,21 @@ export class AppointmentComponent implements OnInit {
 
   }
 
-  // Load appointments list
+
   loadAppointments() {
     this.appointmentService.getAppointments().subscribe((data) => {
       this.appointments = data;
     });
   }
 
-  // Validate appointment
+ 
   validateAppointment(): string | null {
     if (!this.newAppointment.patientId || !this.newAppointment.doctorId ||
       !this.newAppointment.date || !this.newAppointment.timeSlot) {
       return 'Please fill in all required fields';
     }
 
-    // Check if date is in the past
+    
     const selectedDate = new Date(this.newAppointment.date);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -119,7 +122,7 @@ export class AppointmentComponent implements OnInit {
       return 'Cannot book appointments for past dates';
     }
 
-    // Check for duplicate appointments
+    
     const existingAppointment = this.appointments.find(app =>
       app.doctorId === this.newAppointment.doctorId &&
       app.date === this.newAppointment.date &&
@@ -133,7 +136,7 @@ export class AppointmentComponent implements OnInit {
     return null;
   }
 
-  // Add new appointment
+  
   addAppointment() {
     this.errorMessage = '';
     const validationError = this.validateAppointment();
@@ -185,7 +188,7 @@ export class AppointmentComponent implements OnInit {
 
 
 
-  // Update appointment status
+  
   updateStatus(app: any, newStatus: string) {
     const updated = { ...app, status: newStatus };
     this.appointmentService.updateAppointment(app.id, updated).subscribe(() => {
@@ -195,7 +198,7 @@ export class AppointmentComponent implements OnInit {
     });
   }
 
-  // Delete appointment
+  
   deleteAppointment(id: number) {
     if (confirm('Are you sure you want to delete this appointment?')) {
       this.appointmentService.deleteAppointment(id).subscribe(() => {
@@ -207,5 +210,8 @@ export class AppointmentComponent implements OnInit {
   onSelection(event: any) {
     const selectedId = event.target.value;
     this.selectedDoctor = this.doctors.find(d => d.id === selectedId) || null;
+  }
+  goBack() {
+     this.router.navigate(['dashboard/admin']);
   }
 }

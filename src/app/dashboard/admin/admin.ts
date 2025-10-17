@@ -11,33 +11,35 @@ import { UserService } from '../../services/user';
   styleUrls: ['./admin.css']
 })
 export class AdminDashboardComponent {
-  totalPatients = 12; // you can load from db.json later
-  totalDoctors = 5;
+  totalPatients = 0;
+  totalDoctors = 0;
+ 
 
-  constructor(private router: Router,private userService : UserService) {
-     this.getUserCounts()
-
+  constructor(private router: Router, private userService: UserService) {
+    this.getUserCounts();
   }
 
- m(){
+  m() {
     this.router.navigate(['/management/patient']);
- }
+  }
 
- n(){
+  n() {
     this.router.navigate(['/management/doctor']);
- }
+  }
 
- o(){
+  o() {
     this.router.navigate(['/management/appointment']);
- }
+  }
 
- getUserCounts()
- {
+  getUserCounts() {
     this.userService.getUsers().subscribe((data) => {
-      this.totalPatients = data.filter((user: any) => user.role === 'patient').length;
-      this.totalDoctors = data.filter((user: any) => user.role === 'doctor').length;
+      this.totalPatients = data.filter((u: any) => u.role === 'patient').length;
+      this.totalDoctors = data.filter((u: any) => u.role === 'doctor').length;
     });
- }
+
+    
+
+  }
 
   logout() {
     localStorage.removeItem('loggedInUser');

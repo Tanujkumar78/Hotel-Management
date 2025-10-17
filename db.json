@@ -91,11 +91,74 @@
       "phone": "1234567890",
       "fee": 1,
       "role": "doctor"
+    },
+    {
+      "id": "4111",
+      "name": "admin",
+      "email": "admin@hospital.com",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "8ba0",
+      "name": "police",
+      "email": "police@gmail.com",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "8e43",
+      "name": "layyi",
+      "email": "laayi@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "18ae",
+      "name": "a",
+      "email": "a@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "99dd",
+      "name": "d",
+      "email": "d@gmail.com",
+      "password": "123",
+      "role": "doctor"
+    },
+    {
+      "id": "fd1b",
+      "name": "p",
+      "email": "p@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "3832",
+      "name": "sahithi",
+      "email": "sahithi@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "95f9",
+      "name": "pinky",
+      "email": "pinky@gmail.com",
+      "password": "123",
+      "role": "doctor"
+    },
+    {
+      "id": "534c",
+      "name": "ammullu",
+      "email": "ammullu@gmail.com",
+      "password": "123",
+      "role": "admin"
     }
   ],
   "appointments": [
     {
-      "id": 1,
+      "id": "1",
       "patientId": "67a3",
       "patientName": "patient",
       "patientEmail": "patient@gmail.com",
@@ -107,7 +170,7 @@
       "status": "Scheduled"
     },
     {
-      "id": 2,
+      "id": "2",
       "patientId": "P002",
       "patientName": "ASDF",
       "patientEmail": "",
@@ -119,7 +182,7 @@
       "status": "Scheduled"
     },
     {
-      "id": 3,
+      "id": "3",
       "patientId": "P002",
       "patientName": "ASDF",
       "patientEmail": "",
@@ -131,7 +194,7 @@
       "status": "Scheduled"
     },
     {
-      "id": 4,
+      "id": "4",
       "patientId": "65bd",
       "patientName": "gud",
       "patientEmail": "gud@gmail.com",
@@ -143,7 +206,7 @@
       "status": "Scheduled"
     },
     {
-      "id": 5,
+      "id": "5",
       "patientId": "ce29",
       "patientName": "tanuj ",
       "patientEmail": "tanuj@gmail.com",
@@ -152,6 +215,42 @@
       "doctorEmail": "ravi@gmail.com",
       "date": "2025-10-30",
       "timeSlot": "Afternoon",
+      "status": "Scheduled"
+    },
+    {
+      "id": 6,
+      "patientId": "8e43",
+      "patientName": "layyi",
+      "patientEmail": "laayi@gmail.com",
+      "doctorId": "f0ee",
+      "doctorName": "bad",
+      "doctorEmail": "bad@gmail.com",
+      "date": "2025-10-21",
+      "timeSlot": "Morning",
+      "status": "Scheduled"
+    },
+    {
+      "id": 7,
+      "patientId": "fd1b",
+      "patientName": "p",
+      "patientEmail": "p@gmail.com",
+      "doctorId": "99dd",
+      "doctorName": "d",
+      "doctorEmail": "d@gmail.com",
+      "date": "2025-10-18",
+      "timeSlot": "Afternoon",
+      "status": "Scheduled"
+    },
+    {
+      "id": 8,
+      "patientId": "3832",
+      "patientName": "sahithi",
+      "patientEmail": "sahithi@gmail.com",
+      "doctorId": "95f9",
+      "doctorName": "pinky",
+      "doctorEmail": "pinky@gmail.com",
+      "date": "2025-10-18",
+      "timeSlot": "Morning",
       "status": "Scheduled"
     }
   ]

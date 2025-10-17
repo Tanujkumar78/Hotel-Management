@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { PatientService } from '../../services/patient';
 import { UserService } from '../../services/user';
 import { map } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-patients',
@@ -25,7 +26,7 @@ export class PatientsComponent implements OnInit {
     role:'patient'
   };
 
-  constructor(private patientService: UserService) {}
+  constructor(private patientService: UserService,private router: Router) {}
 
   ngOnInit() {
     this.loadPatients();
@@ -55,5 +56,8 @@ export class PatientsComponent implements OnInit {
       this.patients.push(patient);
       this.newPatient = { name: '', age: '', gender: '', phone: '', bloodGroup: '', role:'patient' };
     });
+  }
+    goBack() {
+     this.router.navigate(['dashboard/admin']);
   }
 }

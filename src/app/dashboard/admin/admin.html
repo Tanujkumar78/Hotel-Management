@@ -1,20 +1,32 @@
 <div class="dashboard-container">
+  <nav class="sidebar">
+    <a  (click)="m()">Patient Management</a>
+    
+    <a (click)="n()">Doctor Management</a>
+    
+    <a (click)="o()">Appointment Management</a>
+      
+  </nav>
+
   <header class="header">
-    <h2>Admin Dashboard</h2>
+    <div class="header-text">
+      <h2>Admin Dashboard</h2>
+      <p class="header-sub">Welcome back! Here's your overview.</p>
+    </div>
     <button class="logout-btn" (click)="logout()">Logout</button>
   </header>
 
-  <div class="stats">
-    <div class="card">Total Patients: {{ totalPatients }}</div>
-    <div class="card">Total Doctors: {{ totalDoctors }}</div>
-  </div>
-
-  <nav class="sidebar">
-    <a routerLink="dashboard/patient">Patient Management</a>
-    <button (click)="m()">abc</button>
-    <a routerLink="/admin/doctors">Doctor Management</a>
-     <button (click)="n()">abcd</button>
-    <a routerLink="/admin/appointments">Appointment Management</a>
-        <button (click)="o()">abcde</button>
-  </nav>
+  <section class="stats">
+    <div class="card">
+      <div class="card-label">Total Patients</div>
+      <div class="card-number">{{ totalPatients }}</div>
+      <div class="card-caption">Registered patients</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Total Doctors</div>
+      <div class="card-number">{{ totalDoctors }}</div>
+      <div class="card-caption">Active doctors</div>
+    </div>
+   
+  </section>
 </div>
