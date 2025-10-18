@@ -38,8 +38,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p of patients">
-        <td>{{ p.id }}</td>
+     <tr *ngFor="let p of patients; let i= index ">
+        <td>{{i+1}}</td>
         <td>{{ p.name }}</td>
         <td>{{ p.age }}</td>
         <td>{{ p.gender }}</td>
