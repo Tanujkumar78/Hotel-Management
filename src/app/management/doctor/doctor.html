@@ -41,6 +41,7 @@
       <tr>
         <th>ID</th>
         <th>Name</th>
+         <th>Email</th>
         <th>Specialization</th>
         <th>Phone</th>
         <th>Fee</th>
@@ -51,6 +52,7 @@
       <tr *ngFor="let doc of doctors">
         <td>{{ doc.id }}</td>
         <td>{{ doc.name }}</td>
+        <td>{{ doc.email }}</td>
         <td>{{ doc.specialization }}</td>
         <td>{{ doc.phone }}</td>
         <td>{{ doc.fee }}</td>
