@@ -12,7 +12,7 @@ export class UserService {
   getLoggedInUser(): any {
     throw new Error('Method not implemented.');
   }
-  private apiUrl = 'https://db-json-hospital.vercel.app/users';
+  private apiUrl = 'https://db-json-hospital.onrender.com/users';
 
   constructor(private http: HttpClient) {}
 

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DoctorService {
-  private apiUrl = 'https://db-json-hospital.vercel.app/doctors';
+  private apiUrl = 'https://db-json-hospital.onrender.com/doctors';
 
   constructor(private http: HttpClient) {}
 
