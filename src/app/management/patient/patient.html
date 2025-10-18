@@ -9,6 +9,7 @@
   <form (ngSubmit)="addPatient()" class="patient-form">
     <input type="text" [(ngModel)]="newPatient.name" name="name" placeholder="Name" required />
     <input type="number" [(ngModel)]="newPatient.age" name="age" placeholder="Age" required />
+    <input type="email" [(ngModel)]="newPatient.email" name="email" placeholder="Email" required />
     <select [(ngModel)]="newPatient.gender" name="gender">
       <option value="">Select Gender</option>
       <option>Male</option>
@@ -31,6 +32,7 @@
       <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Email</th>
         <th>Age</th>
         <th>Gender</th>
         <th>Phone</th>
@@ -38,9 +40,10 @@
       </tr>
     </thead>
     <tbody>
-     <tr *ngFor="let p of patients; let i= index ">
-        <td>{{i+1}}</td>
+      <tr *ngFor="let p of patients">
+        <td>{{ p.id }}</td>
         <td>{{ p.name }}</td>
+        <td>{{ p.email }}</td>  
         <td>{{ p.age }}</td>
         <td>{{ p.gender }}</td>
         <td>{{ p.phone }}</td>
