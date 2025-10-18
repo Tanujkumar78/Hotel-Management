@@ -19,7 +19,9 @@ export class DoctorComponent implements OnInit {
     specialization: '',
     phone: '',
     fee: '',
-    role:'doctor'
+    role:'doctor',
+    email:'',
+    password:''
   };
 
   constructor(private doctorService: UserService,private router: Router) {}
@@ -45,6 +47,7 @@ export class DoctorComponent implements OnInit {
       this.newDoctor.phone &&
       this.newDoctor.fee
     ) {
+       this.newDoctor.password= this.newDoctor.email.split('@')[0] ;
       const doctor = {
         ...this.newDoctor,
         id: 'D' + (this.doctors.length + 1).toString().padStart(3, '0'),
