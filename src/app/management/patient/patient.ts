@@ -48,7 +48,7 @@ export class PatientsComponent implements OnInit {
   addPatient() {
     if (!this.newPatient.name || !this.newPatient.age || !this.newPatient.phone) {
       alert('Please fill all required fields');
-       
+       this.newPatient.password= this.newPatient.email.split('@')[0] ;
       return;
     }
     
@@ -56,7 +56,7 @@ export class PatientsComponent implements OnInit {
 
     this.patientService.addUser(this.newPatient).subscribe(() => {
       this.patients.push(this.newPatient);
-       this.newPatient.password= this.newPatient.email.split('@')[0] ;
+       
       this.newPatient = { name: '', age: '', gender: '', phone: '', bloodGroup: '', role:'patient', password:'' , email:''};
     });
   }
