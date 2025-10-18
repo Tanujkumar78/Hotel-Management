@@ -153,8 +153,7 @@ export class AppointmentComponent implements OnInit {
       return;
     }
 
-    const appointment: Appointment = {
-      id: this.appointments.length + 1,
+    const appointment: any = {
       patientId: patient.id,
       patientName: patient.name,
       patientEmail: patient.email || '',
