@@ -81,8 +81,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let app of appointments">
-        <td>{{ app.id }}</td>
+      <tr *ngFor="let app of appointments; let i = index">
+        <td>{{ i+1 }}</td>
         <td>{{ app.patientName }}</td>
         <td>{{ app.doctorName }}</td>
         <td>{{ app.date }}</td>
