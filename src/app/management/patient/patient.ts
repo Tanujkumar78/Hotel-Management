@@ -20,10 +20,12 @@ export class PatientsComponent implements OnInit {
   newPatient = {
     name: '',
     age: '',
+    email:'',
     gender: '',
     phone: '',
     bloodGroup: '',
-    role:'patient'
+    role:'patient',
+     password:''
   };
 
   constructor(private patientService: UserService,private router: Router) {}
@@ -46,15 +48,15 @@ export class PatientsComponent implements OnInit {
   addPatient() {
     if (!this.newPatient.name || !this.newPatient.age || !this.newPatient.phone) {
       alert('Please fill all required fields');
+        this.newPatient.password= this.newPatient.email.split('@')[0] ;
       return;
     }
+    
+ 
 
-    const id = 'P' + (this.patients.length + 1).toString().padStart(3, '0');
-    const patient = { id, ...this.newPatient };
-
-    this.patientService.addUser(patient).subscribe(() => {
-      this.patients.push(patient);
-      this.newPatient = { name: '', age: '', gender: '', phone: '', bloodGroup: '', role:'patient' };
+    this.patientService.addUser(this.newPatient).subscribe(() => {
+      this.patients.push(this.newPatient);
+      this.newPatient = { name: '', age: '', gender: '', phone: '', bloodGroup: '', role:'patient', password:'' , email:''};
     });
   }
     goBack() {
