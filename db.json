@@ -50,8 +50,6 @@
       "password": "123",
       "role": "admin"
     },
-   
-   
     {
       "id": "P004",
       "name": "ram",
@@ -67,6 +65,20 @@
       "specialization": "general",
       "phone": "2345678",
       "fee": 1200,
+      "role": "doctor"
+    },
+    {
+      "id": "dfeb",
+      "name": "rahul",
+      "email": "rahul@gmail.com",
+      "password": "123",
+      "role": "patient"
+    },
+    {
+      "id": "7ba0",
+      "name": "varun",
+      "email": "varun@gmail.com",
+      "password": "123",
       "role": "doctor"
     }
   ],
@@ -108,7 +120,7 @@
       "status": "Scheduled"
     },
     {
-      "id": 4,
+      "id": "4",
       "patientId": "P004",
       "patientName": "ram",
       "patientEmail": "",
