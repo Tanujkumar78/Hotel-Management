@@ -49,8 +49,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let doc of doctors">
-        <td>{{ doc.id }}</td>
+        <tr *ngFor="let doc of doctors; let i = index">
+        <td>{{ i+1 }}</td>
         <td>{{ doc.name }}</td>
         <td>{{ doc.email }}</td>
         <td>{{ doc.specialization }}</td>
